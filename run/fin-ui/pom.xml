@@ -43,22 +43,22 @@
 		<!-- Fin -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>fin-cc-impl</artifactId>
+			<artifactId>cc-impl</artifactId>
 			<version>${fin-cc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>fin-cc-ui</artifactId>
+			<artifactId>cc-ui</artifactId>
 			<version>${fin-cc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>fin-inv-ui</artifactId>
+			<artifactId>inv-ui</artifactId>
 			<version>${fin-inv.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>fin-inv-impl</artifactId>
+			<artifactId>inv-impl</artifactId>
 			<version>${fin-inv.version}</version>
 		</dependency>
 

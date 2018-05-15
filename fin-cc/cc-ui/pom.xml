@@ -3,7 +3,7 @@
 
 	<parent>
 		<groupId>cn.snsoft.fin</groupId>
-		<artifactId>parents-fin</artifactId>
+		<artifactId>parents-fin-cc</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
@@ -16,12 +16,11 @@
 		<dependency>
 			<groupId>cn.snsoft.fin</groupId>
 			<artifactId>cc-api</artifactId>
-			<version>${cc.version}</version>
+			<version>${fin-cc.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>cn.snsoft.fin</groupId>
+			<groupId>cn.snsoft.snadk</groupId>
 			<artifactId>snadk-ui</artifactId>
-			<version>${snadk.version}</version>
 		</dependency>
 		<!-- 测试 -->
 		<dependency>
