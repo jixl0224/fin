@@ -3,9 +3,9 @@
 
 	<parent>
 		<groupId>cn.snsoft.fin</groupId>
-		<artifactId>parents-fin</artifactId>
+		<artifactId>parents-fin-inv</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../../../parents-java/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 
@@ -17,7 +17,6 @@
 		<dependency>
 			<groupId>cn.snsoft.snadk</groupId>
 			<artifactId>snadk-ui</artifactId>
-			<version>${snadk.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.snsoft.fin</groupId>
@@ -44,12 +43,20 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<!-- 控制资源文件的拷贝 -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>cfg</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<!-- 编译器版本 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
 				<configuration>
 					<source>${java-ver}</source>
 					<target>${java-ver}</target>

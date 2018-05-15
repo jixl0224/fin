@@ -4,9 +4,9 @@
 
 	<parent>
 		<groupId>cn.snsoft.fin</groupId>
-		<artifactId>parents-fin</artifactId>
+		<artifactId>parents-fin-inv</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../../../parents-java/pom.xml</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 
@@ -45,7 +45,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
 				<configuration>
 					<source>${java-ver}</source>
 					<target>${java-ver}</target>

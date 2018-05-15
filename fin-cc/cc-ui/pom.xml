@@ -42,12 +42,20 @@
 	</dependencies>
 
 	<build>
+		<resources>
+			<!-- 控制资源文件的拷贝 -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>cfg</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<!-- 编译器版本 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
 				<configuration>
 					<source>${java-ver}</source>
 					<target>${java-ver}</target>

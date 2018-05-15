@@ -44,6 +44,38 @@
 			<groupId>cn.snsoft.snadk</groupId>
 			<artifactId>snadk-cmc</artifactId>
 		</dependency>
+		
+		<!-- fin -->
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>cc-api</artifactId>
+			<version>${fin-cc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>cc-impl</artifactId>
+			<version>${fin-cc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>cc-ui</artifactId>
+			<version>${fin-cc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>inv-api</artifactId>
+			<version>${fin-inv.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>inv-impl</artifactId>
+			<version>${fin-inv.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>inv-ui</artifactId>
+			<version>${fin-inv.version}</version>
+		</dependency>
 
 		<!-- 三方 -->
 		<dependency>
@@ -142,7 +174,7 @@
 						</resource>
 						<!-- fin-cc -->
 						<resource>
-							<directory>../../fin-cc/srv-ui/web</directory>
+							<directory>../../fin-cc/cc-ui/web</directory>
 							<excludes>
 								<exclude>**/*.err</exclude>
 								<exclude>**/test/**/*.*</exclude>
@@ -152,7 +184,7 @@
 						</resource>
 						<!-- fin-inv -->
 						<resource>
-							<directory>../../fin-inv/srv-ui/web</directory>
+							<directory>../../fin-inv/inv-ui/web</directory>
 							<excludes>
 								<exclude>**/*.err</exclude>
 								<exclude>**/test/**/*.*</exclude>
