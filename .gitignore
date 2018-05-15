@@ -1,0 +1,60 @@
+# system ignore
+.DS_Store
+Thumbs.db
+thumbs.db
+
+# maven/gradle ignore
+target
+*.war
+
+# svn ignore
+*.svn
+
+# Eclipse/MyEclipse ignore
+.settings/
+.project
+.classpath
+.myeclipse/
+.mymetadata
+
+# IDEA ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# test ignore
+test-output
+**/Tomcat/work/**
+*.class
+*.pyc
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
+
+# bin ignore
+*.avi
+*.mov
+*.rmvb
+*.mkv
+*.exe
+*.rar
+*.tgz
+*.tar
+*.gz
+*.7z
+
+
+
+rebel.xml
+snadk-sso/sso-client-api/src/main/java/snsoft/bas/util/EncoderUtils.java
+cfg.zip
+boot-run/zph/
+demo/

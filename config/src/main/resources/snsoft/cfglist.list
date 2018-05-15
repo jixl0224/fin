@@ -1,0 +1,16 @@
+#优先级上面的高于下面的!
+#/开头标示绝对路径
+#管控中心
+snadk-cmc/cmc-ui
+#内容发布
+snadk-cms/cms-ui
+
+#snadk-core
+snadk-core/snadk-bas
+snadk-core/snadk-dx
+snadk-ui/snadk-ui
+#测试工程
+snadk-core/snadk-test
+
+#${verbose_name}
+${cfglist}

@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<!-- 版本号:xx.yy.zz xx:为大版本,yy:为小版本,zz后面的:为只改bug,不增加新功能 -->
+	<groupId>cn.snsoft.fin</groupId>
+	<artifactId>parents-fin-xjs</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>cn.snsoft.fin-parents-xjs-${project.version}.pom</name>
+
+	<modules>
+		<!-- -->
+		<module>../fin-cc/xjs</module>
+		<module>../fin-inv/xjs</module>
+	</modules>
+
+	<properties>
+		<!-- 模块版本 -->
+		<fin-cc.version>1.0.0-SNAPSHOT</fin-cc.version>
+		<fin-inv.version>1.0.0-SNAPSHOT</fin-inv.version>
+
+		<!-- 底层 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-ver>1.8</java-ver>
+		<!-- 模块版本 -->
+		<snadk.core.version>4.0.0-SNAPSHOT</snadk.core.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.snsoft.snadk</groupId>
+				<artifactId>snadk-xjs</artifactId>
+				<version>${snadk.core.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- 编译打包插件 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.6.1</version>
+					<configuration>
+						<source>${java-ver}</source>
+						<target>${java-ver}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+				<!-- 打源码包 -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.0.1</version>
+					<configuration>
+						<attach>true</attach>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>compile</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshot</id>
+			<!-- <url>http://adk-nexus.sino-clink.com.cn:8081/repository/maven-snapshots/</url> -->
+			<url>${REPOSNAPSHOT}</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-release</id>
+			<!-- <url>http://adk-nexus.sino-clink.com.cn:8081/repository/maven-releases/</url> -->
+			<url>${REPORELEASE}</url>
+		</repository>
+	</distributionManagement>
+</project>
+
+
