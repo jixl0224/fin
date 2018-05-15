@@ -12,5 +12,6 @@ snadk-ui/snadk-ui
 #测试工程
 snadk-core/snadk-test
 
-#${verbose_name}
-${cfglist}
+#理财管理
+fin-cc/cc-ui
+fin-inv/inv-ui

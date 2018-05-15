@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- type= 
+1:SqlServer 
+2:Oracle 
+4:MySql 
+-->
+
+<workspace-list>
+	<!--
+	1、不存在默认数据源；
+	2、认为一个帐套文件仅存在一个帐套；
+	-->
+	<workspace id="00" title="FIN开发库" startTimerTask="false">
+		<datasource id="DEFAULT" host="127.0.0.1" port="3306" database="fin" user="root" password="snjixl" type="4" />
+		<datasource id="CONFIG" host="127.0.0.1" port="3306" database="fin" user="root" password="snjixl" type="4" />
+		<datasource id="UCODECFG" host="127.0.0.1" port="3306" database="fin" user="root" password="snjixl" type="4" />
+		<datasource id="FINWRITE" host="127.0.0.1" port="3306" database="fin" user="root" password="snjixl" type="4" />
+		<datasource id="FINREAD" host="127.0.0.1" port="3306" database="fin" user="root" password="snjixl" type="4" />
+	</workspace>
+</workspace-list> 
+ 
+

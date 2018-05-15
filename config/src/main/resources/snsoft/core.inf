@@ -41,6 +41,6 @@ cfg.ver=1.0.0
 #优先级先后顺序
 cfg.priority=file
 #本地配置文件基目录
-cfg.file.root=${verbose_path};/snsoft90/snsoft_adk
+cfg.file.root=/snsoft90/fin;/snsoft90/snsoft_adk
 #优先级顺序列表(默认值:classpath:snsoft/cfglist.list)
 #cfg.file.list=classpath:snsoft/cfglist.list

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menumodel id="FIN-INV" title="投资管理" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://snsoft.cn/schema/Menu"
+	xsi:schemaLocation="http://snsoft.cn/schema/Menu
+		https://adk-svn.sino-clink.com.cn/svn/adkdoc/configs/schema/Menu.xsd">
+	<menu title="投资管理">
+		<menu title="投资管理">
+			<menu title="基础配置">
+				<menu title="渠道维护"></menu>
+			</menu>
+			<menu title="业务操作">
+				<menu title="投资记录"></menu>
+				<menu title="盈亏-年月"></menu>
+				<menu title="盈亏-渠道"></menu>
+			</menu>
+		</menu>
+	</menu>
+</menumodel>
+
+
+

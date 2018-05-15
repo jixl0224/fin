@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menumodel id="FIN-CC" title="信用卡管理" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://snsoft.cn/schema/Menu"
+	xsi:schemaLocation="http://snsoft.cn/schema/Menu
+		https://adk-svn.sino-clink.com.cn/svn/adkdoc/configs/schema/Menu.xsd">
+	<menu title="信用卡">
+		<menu title="信用卡管理">
+			<menu title="基础配置">
+				<menu title="卡种维护"></menu>
+				<menu title="活动维护"></menu>
+				<menu title="信用卡管理"></menu>
+			</menu>
+			<menu title="业务操作">
+				<menu title="信用卡消费"></menu>
+				<menu title="信用卡还款"></menu>
+				<menu title="信用卡看板"></menu>
+			</menu>
+		</menu>
+	</menu>
+</menumodel>
+
+
+

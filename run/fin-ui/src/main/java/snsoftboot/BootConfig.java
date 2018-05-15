@@ -19,13 +19,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import snsoft.servlet.SessionTrace;
-import snsoft.servlet.WebStartServlet;
-import snsoft.servlet.cxf.CXFWebServiceServlet;
 import snsoft.servlet.filter.DefaultFilter;
 import snsoft.servlet.filter.UserSessionFilter;
 import snsoft.servlet.fs.FileSystemServlet;
-import snsoft.servlet.jdbc.JdbcServlet;
 import snsoft.ui.servlet.UIInvokeServlet;
 /**
  * <p>标题：</p>
@@ -83,42 +79,6 @@ public class BootConfig
 		filterRegistrationBean.addUrlPatterns("/do/*");
 		return filterRegistrationBean;
 	}
-	//	@Bean
-	//	public RequestMappingHandlerMapping handlerMapping()
-	//	{
-	//		return new RequestMappingHandlerMapping();
-	//	}
-
-	//	@Bean
-	//	public RequestMappingHandlerAdapter RequestMappingHandlerAdapter()
-	//	{
-	//		RequestMappingHandlerAdapter adapter = new RequestMappingHandlerAdapter();
-	//		List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
-	//		messageConverters.add(new Jaxb2RootElementHttpMessageConverter());
-	//		messageConverters.add(new MappingJackson2HttpMessageConverter());
-	//		adapter.setMessageConverters(messageConverters );
-	//		return adapter;
-	//	}
-	@Bean
-	public SessionTrace listener_SessionTrace()
-	{
-		return new SessionTrace();
-	}
-
-	@Bean
-	public CXFWebServiceServlet servlet_cxf()
-	{
-		return new CXFWebServiceServlet();
-	}
-
-	@Bean
-	public ServletRegistrationBean servlet_cxf_mapping(CXFWebServiceServlet servlet)
-	{
-		ServletRegistrationBean bean = new ServletRegistrationBean();
-		bean.setServlet(servlet);
-		bean.addUrlMappings("/cxfservices/*");
-		return bean;
-	}
 
 	@Bean
 	public UIInvokeServlet servlet_uiinvoke()
@@ -152,50 +112,6 @@ public class BootConfig
 		return bean;
 	}
 
-	@Bean
-	public WebStartServlet servlet_webStart()
-	{
-		return new WebStartServlet();
-	}
-
-	@Bean
-	public ServletRegistrationBean servlet_webStart_mapping(WebStartServlet servlet)
-	{
-		ServletRegistrationBean bean = new ServletRegistrationBean();
-		bean.setServlet(servlet);
-		bean.addUrlMappings("/webstart.jnlp");
-		return bean;
-	}
-
-	@Bean
-	public JdbcServlet servlet_jdbc()
-	{
-		return new JdbcServlet();
-	}
-
-	@Bean
-	public ServletRegistrationBean servlet_jdbc_mapping(JdbcServlet servlet)
-	{
-		ServletRegistrationBean bean = new ServletRegistrationBean();
-		bean.setServlet(servlet);
-		bean.addUrlMappings("/jdbc/*");
-		return bean;
-	}
-
-	//	@Bean
-	//	public UIController servlet_uicontroller()
-	//	{
-	//		return new UIController();
-	//	}
-	//	
-	//	@Bean
-	//	public ServletRegistrationBean servlet_uicontroller_mapping(UIController servlet)
-	//	{
-	//		ServletRegistrationBean bean = new ServletRegistrationBean();
-	//		bean.setServlet(servlet);
-	//		bean.addUrlMappings("/ui/*");
-	//		return bean;
-	//	}
 	@Bean
 	public BootFactory bootFactory()
 	{
