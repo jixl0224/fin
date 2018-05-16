@@ -19,6 +19,10 @@
 			<artifactId>cc-api</artifactId>
 			<version>${fin-cc.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.snadk</groupId>
+			<artifactId>snadk-bpm-impl</artifactId>
+		</dependency>
 		<!-- validator -->
 		<dependency>
 			<groupId>xml-apis</groupId>
