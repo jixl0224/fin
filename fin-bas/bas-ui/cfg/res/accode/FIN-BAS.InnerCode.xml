@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Codelike>
+	<name>FIN-内码编码规则</name>
+	<remark>
+    <![CDATA[
+	共用编码规则，可以自定义。
+	]]>
+	</remark>
+	<codeinfo>
+    <![CDATA[
+	proc  getCodeLike(refData)
+		return "FIN" + inc(10)
+	end proc
+	]]>
+	</codeinfo>
+</Codelike>

@@ -11,6 +11,7 @@
 
 	<modules>
 		<!-- 子模块 -->
+		<module>../fin-bas</module>
 		<module>../fin-cc</module>
 		<module>../fin-inv</module>
 		<module>../package/fin-ui-war</module>
@@ -18,6 +19,7 @@
 
 	<properties>
 		<!-- 模块版本 -->
+		<fin-bas.version>1.0.0-SNAPSHOT</fin-bas.version>
 		<fin-cc.version>1.0.0-SNAPSHOT</fin-cc.version>
 		<fin-inv.version>1.0.0-SNAPSHOT</fin-inv.version>
 		<!-- 打包版本 -->

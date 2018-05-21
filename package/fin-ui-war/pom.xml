@@ -48,6 +48,21 @@
 		<!-- fin -->
 		<dependency>
 			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>bas-api</artifactId>
+			<version>${fin-bas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>bas-impl</artifactId>
+			<version>${fin-bas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
+			<artifactId>bas-ui</artifactId>
+			<version>${fin-bas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.snsoft.fin</groupId>
 			<artifactId>cc-api</artifactId>
 			<version>${fin-cc.version}</version>
 		</dependency>

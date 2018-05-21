@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sheet xmlns="http://snsoft.cn/schema/Sheet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<name>投资记录</name>
+	<tblname>inv_record</tblname>
+	<innerfld>invicode</innerfld>
+	<outerfld>invcode</outerfld>
+	<voclass>snsoft.fin.inv.vo.InvRecord</voclass>
+	<remark>
+	<![CDATA[
+	1、启用单据权限：
+	（1）权限字段：
+		usercode=用户
+	（2）操作编码：
+		R：查询；
+		C：操作；
+	]]>
+	</remark>
+</Sheet>

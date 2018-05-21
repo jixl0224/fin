@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<db id="FIN-CC" title="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://snsoft.cn/schema/db"
+	xsi:schemaLocation="http://snsoft.cn/schema/db
+		https://adk-svn.sino-clink.com.cn/svn/adkdoc/configs/schema/CreateDatabase.xsd">
+		
+	<include src="classpath:snsoft/sndata/CreateDatabase.xml"/>
+	
+	<!-- 企业海关编码CHAR(SZCUSCODE) -->
+	<macro name="SZCUSCODE" value="10" />
+	
+	<!-- 企业海关名称NVARCHAR(SZCUSNAME) -->
+	<macro name="SZCUSNAME" value="70" />
+	
+	<!-- 企业社会信用编码CHAR(SZSCC) -->
+	<macro name="SZSCC" value="18" />
+	
+	<!-- 状态宏CHAR(SZSTATUS) -->
+	<macro name="SZSTATUS" value="2" />
+	
+	<!-- 进出口标志 -->
+	<macro name="SZIEFLAG" value="2" />
+	
+	<!-- 
+		表空间：SW_TBS
+		索引空间：SWIDX_TBS 
+	-->
+</db>

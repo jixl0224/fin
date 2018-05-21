@@ -12,6 +12,7 @@
 
 	<modules>
 		<!-- -->
+		<module>../fin-bas/xjs</module>
 		<module>../fin-cc/xjs</module>
 		<module>../fin-inv/xjs</module>
 	</modules>

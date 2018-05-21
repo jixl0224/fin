@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Codelike>
+	<name>投资记录外码规则</name>
+	<codeinfo>
+    <![CDATA[
+	proc  getCodeLike(refData)
+		return "INVYYMMdd" + inc(2)
+	end proc
+	
+	proc getExtFilter(refData)
+		usercode = refData.get("usercode")
+		if usercode == null
+			throw new java.lang.RuntimeException("用户不可为空！")
+		end if
+		return snsoft.sql.SqlExpr.columnEqValue("usercode",usercode).toString()
+	end proc
+	]]>
+	</codeinfo>
+</Codelike>

@@ -1,25 +1,28 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>cn.snsoft.fin</groupId>
-		<artifactId>parents-fin-cc</artifactId>
+		<artifactId>parents-fin-bas</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>cc-impl</artifactId>
-	<name>cc-impl</name>
+	<artifactId>bas-ui</artifactId>
+	<name>bas-ui</name>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>cn.snsoft.fin</groupId>
-			<artifactId>cc-api</artifactId>
-			<version>${fin-cc.version}</version>
+			<artifactId>bas-api</artifactId>
+			<version>${fin-bas.version}</version>
 		</dependency>
-		<!-- validator -->
+		<dependency>
+			<groupId>cn.snsoft.snadk</groupId>
+			<artifactId>snadk-ui</artifactId>
+		</dependency>
+		<!-- 测试 -->
 		<dependency>
 			<groupId>xml-apis</groupId>
 			<artifactId>xml-apis</artifactId>
@@ -38,8 +41,16 @@
 		</dependency>
 	</dependencies>
 
-
 	<build>
+		<resources>
+			<!-- 控制资源文件的拷贝 -->
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>cfg</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<!-- 编译器版本 -->
 			<plugin>

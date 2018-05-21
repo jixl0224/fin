@@ -4,20 +4,20 @@
 
 	<parent>
 		<groupId>cn.snsoft.fin</groupId>
-		<artifactId>parents-fin-cc</artifactId>
+		<artifactId>parents-fin-bas</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>cc-impl</artifactId>
-	<name>cc-impl</name>
+	<artifactId>bas-impl</artifactId>
+	<name>bas-impl</name>
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>cn.snsoft.fin</groupId>
-			<artifactId>cc-api</artifactId>
-			<version>${fin-cc.version}</version>
+			<artifactId>bas-api</artifactId>
+			<version>${fin-bas.version}</version>
 		</dependency>
 		<!-- validator -->
 		<dependency>
