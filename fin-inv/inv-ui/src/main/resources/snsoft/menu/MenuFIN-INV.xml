@@ -5,10 +5,10 @@
 	<menu title="投资管理">
 		<menu title="投资管理">
 			<menu title="基础配置">
-				<menu title="渠道维护"></menu>
+				<menu title="渠道维护" cmd="ui:FIN-INV.InvKind"></menu>
 			</menu>
 			<menu title="业务操作">
-				<menu title="投资记录"></menu>
+				<menu title="投资记录" cmd="ui:FIN-INV.InvestEntry"></menu>
 				<menu title="盈亏-年月"></menu>
 				<menu title="盈亏-渠道"></menu>
 			</menu>

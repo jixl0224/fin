@@ -1,7 +1,9 @@
 package snsoft.fin.inv.vo;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
 import snsoft.bas.sheet.dft.annotation.DefaultValue;
 import snsoft.dx.VO;
@@ -18,6 +20,7 @@ import snsoft.dx.VO;
  * <p>创建日期：2018年5月19日下午5:01:48</p>
  * 查看帮助：<a href="" target="_blank"></a>
  */
+@Table(name = "inv_kind")
 public class InvKind extends VO
 {
 	private static final long	serialVersionUID	= -6798898240805375231L;
@@ -41,6 +44,20 @@ public class InvKind extends VO
 	@Column
 	@Length(max = 512)
 	private String				remark;
+
+	/**状态*/
+	@DefaultValue("70")
+	@Column
+	private String				status;
+
+	/**创建时间*/
+	@Column
+	@DefaultValue(value = "CURTIME", uivalue = "new Xjs.dx.util.CurrentDateDefaultValue({serverTime:true})")
+	private Date				predate;
+
+	/**修改时间*/
+	@Column
+	private Date				modifydate;
 
 	public String getUsercode()
 	{
@@ -80,5 +97,35 @@ public class InvKind extends VO
 	public void setRemark(String remark)
 	{
 		this.remark = remark;
+	}
+
+	public String getStatus()
+	{
+		return status;
+	}
+
+	public void setStatus(String status)
+	{
+		this.status = status;
+	}
+
+	public Date getPredate()
+	{
+		return predate;
+	}
+
+	public void setPredate(Date predate)
+	{
+		this.predate = predate;
+	}
+
+	public Date getModifydate()
+	{
+		return modifydate;
+	}
+
+	public void setModifydate(Date modifydate)
+	{
+		this.modifydate = modifydate;
 	}
 }

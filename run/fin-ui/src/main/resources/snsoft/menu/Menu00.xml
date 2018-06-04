@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menumodel id="SN-ORD" title="投资管理" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://snsoft.cn/schema/Menu"
+	xsi:schemaLocation="http://snsoft.cn/schema/Menu
+		https://adk-svn.sino-clink.com.cn/svn/adkdoc/configs/schema/Menu.xsd">
+		<include id="FIN-INV" sysid="FIN-INV" />
+		<include id="FIN-CC" sysid="FIN-CC" />
+		<include id="90" sysid="90" />
+</menumodel>
+
+
+

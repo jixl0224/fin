@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B title="投资渠道" fullPage="true">
+	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid">
+	</m:DialogPane>
+	<m:GridTable title="投资渠道" name="kind" sqlexpr="inv_kind" mainui="param" noCollapseQPaneAfterRefresh="true" 
+		xprops.LoadDataService="INF-INV.InvkindService"
+		xprops.SaveDataService="INF-INV.InvkindService"
+		showToolbar="true"
+	>
+		<uilisteners>
+		snsoft.bas.sheet.VOListener.new
+		</uilisteners>
+		<jslistener>
+		<![CDATA[
+		oncmd_start:function(table)
+		{
+			table.dataSet.setValue("status","70");
+			table.saveChanges();
+		}
+		,oncmd_stop:function(table)
+		{
+			table.dataSet.setValue("status","80");
+			table.saveChanges();
+		}
+		]]>
+		</jslistener>
+		<attrs>
+			<attr type="203" name="start" title="启用"/>
+			<attr type="203" name="stop" title="停用"/>
+		</attrs>
+		
+		<ctrlcol idx="1" name="status" sqltype="12" />
+		
+		<ctrlval idx="1" val.status="70" ctrlFor="btn:start" disabled="true" />
+		<ctrlval idx="1" val.status="80" ctrlFor="btn:stop" disabled="true" />
+		
+		<c name="usercode" title="用户" sqltype="12" hidden="true" />
+		<c name="invkind" title="渠道|编码" sqltype="12" width="80" asceOrd="true" rdonly="true"/>
+		<c name="invname" title="渠道|名称" sqltype="12" width="160" />
+		<c name="status" title="状态" sqltype="12" width="60" codedata="#02.status" cmparams="sheetcode:'FIN-INV.InvKind'" showname="true" rdonly="true"/>
+		<c name="remark" title="说明" sqltype="12" width="400" aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true" />
+		
+		<c name="predate" title="创建时间" sqltype="91" width="135" rdonly="true"/>
+		<c name="modifydate" title="修改时间" sqltype="91" width="135" modifydateColumn="true" rdonly="true"/>
+	</m:GridTable>
+</B>

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import snsoft.bas.sheet.dft.annotation.DefaultValue;
 import snsoft.dx.VO;
 
@@ -19,6 +20,7 @@ import snsoft.dx.VO;
  * <p>创建日期：2018年5月19日下午5:05:25</p>
  * 查看帮助：<a href="" target="_blank"></a>
  */
+@Table(name="inv_record")
 public class InvRecord extends VO
 {
 	private static final long	serialVersionUID	= 8485187138931902735L;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B title="投资管理" fullPage="true">
+	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid">
+
+	</m:DialogPane>
+	<m:GridTable title="投资管理" name="record" sqlexpr="inv_record" mainui="param" rdonly="true" noCollapseQPaneAfterRefresh="true" xprops.LoadDataService="INF-INV.InvestService#queryInvRecord"
+		showToolbar="true">
+		<attrs>
+			<attr type="203" name="newUI" title="新建" />
+			<attr type="203" name="openUI" title="打开" />
+		</attrs>
+		<jslistener>
+		#new snsoft.fin.bas.comm.FinOpenMuiListener({info:{muiid:'FIN-INV.InvestDetail',pm:{AuthRefresh:1},initMapper:{'invicode':'invicode'}}})
+		</jslistener>
+		
+		
+		<c name="invicode" title="主键" sqltype="12" hidden="true" />
+		<c name="invcode" title="投资号" sqltype="12" width="100" />
+		<c name="invkind" title="渠道" sqltype="12" width="120" codedata="#FIN-INV.invkind" showname="true" />
+		<c name="invfcy" title="投资金额" sqltype="2" width="80" />
+		<c name="ratio" title="收益率" sqltype="2" width="80" />
+		<c name="bedate" title="起息日期" sqltype="91" width="90" />
+		<c name="ledate" title="停息日期" sqltype="91" width="90" />
+		<c name="accfcy" title="累计盈亏" sqltype="2" width="80" />
+		<c name="remark" title="备注" sqltype="12" width="200" aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true" />
+		<c name="status" title="状态" sqltype="12" width="60" codedata="#02.status" cmparams="sheetcode:'FIN-INV.InvKind'" showname="true" />
+
+		<c name="predate" title="创建时间" sqltype="91" width="135" rdonly="true" descOrd="true" />
+		<c name="modifydate" title="修改时间" sqltype="91" width="135" modifydateColumn="true" rdonly="true" />
+	</m:GridTable>
+</B>

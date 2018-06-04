@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql:#users sql:#gwcode CodeData00 -->
+<codedata-list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://snsoft.cn/schema/CodeData" xsi:schemaLocation="http://snsoft.cn/schema/CodeData
+		https://adk-svn.sino-clink.com.cn/svn/adkdoc/configs/schema/CodeData.xsd">
+
+	<codedata id="invkind" table="inv_kind" expl="投资渠道">
+		<column name="invkind" type="12" title="编码" width="100" primkey="true" />
+		<column name="invname" type="12" title="名称" width="100" />
+	</codedata>
+</codedata-list>

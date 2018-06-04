@@ -3,12 +3,10 @@ package snsoft.fin.inv.service;
 import java.util.List;
 import snsoft.bas.service.QueryParams;
 import snsoft.bas.service.QueryResults;
-import snsoft.bas.service.util.NullQueryParams;
 import snsoft.bas.sheet.busi.annotation.SheetInfo;
 import snsoft.bas.sheet.service.BusiService.MainInnerGetter;
 import snsoft.commons.annotation.AuthParam;
 import snsoft.commons.spring.SpringBean;
-import snsoft.fin.inv.vo.InvKind;
 import snsoft.fin.inv.vo.InvProfit;
 import snsoft.fin.inv.vo.InvRecord;
 import snsoft.sql.annotation.SqlColumn;
@@ -28,12 +26,6 @@ import snsoft.sql.annotation.SqlColumn;
 @SpringBean(name = "INF-INV.InvestService", group = "${INF-INV.Name?}", version = "1")
 public interface InvestService
 {
-	@AuthParam(sheetCode = "FIN-INV.InvKind", opids = { "R", "C" })
-	List<InvKind> queryInvKind(NullQueryParams params);
-
-	@AuthParam(sheetCode = "FIN-INV.InvKind", opids = { "C" })
-	void saveInvKind(List<InvKind> records);
-
 	@AuthParam(sheetCode = "FIN-INV.Invest", opids = { "R", "C" })
 	QueryResults<InvRecord> queryInvRecord(QueryInvRecordParams params);
 

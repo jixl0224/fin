@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B title="投资管理" fullPage="true">
+	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid">
+	
+	</m:DialogPane>
+	<m:GridTable title="投资管理" name="inv_record" sqlexpr="null" mainui="param" rdonly="true" noCollapseQPaneAfterRefresh="true" xprops.LoadDataService="SN-PLAT.FunctypeService">
+		<c name="functype" title="系统功能类型|编码" sqltype="12" width="150" asceOrd="true" />
+		<c name="name" title="系统功能类型|名称" sqltype="12" width="160" />
+		<c name="subtypes" title="实现类型" sqltype="12" width="120" mutiple="true" aidInputerBtn="true" tipIfOverflow="true" />
+		<c name="parsebean" title="解析Bean" sqltype="12" width="240" mutiple="true" aidInputerBtn="true" tipIfOverflow="true" />
+		<c name="remark" title="说明" sqltype="12" width="400" aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true" />
+	</m:GridTable>
+</B>

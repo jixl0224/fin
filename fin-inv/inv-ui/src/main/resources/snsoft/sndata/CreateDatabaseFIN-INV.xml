@@ -8,14 +8,17 @@
 	<!-- 投资渠道 -->
 	<table id="30000" name="inv_kind" title="投资渠道" datasrcid="FINWRITE" localcache="1" storegrp="FIN_TBS">
 		<column id="10" name="usercode" title="用户" type="VARCHAR(SZUCODE)" primkey="true" />
-		<column id="20" name="invkind" title="渠道" type="CHAR(3)" />
+		<column id="20" name="invkind" title="渠道" type="CHAR(3)" primkey="true"/>
 		<column id="30" name="invname" title="名称" type="VARCHAR(64)" />
-		<column id="40" name="remark" title="说明" type="VARCHAR(512)" />
+		<column id="40" name="status" title="状态" type="CHAR(2)" />
+		<column id="45" name="remark" title="说明" type="VARCHAR(512)" />
+		<column id="50" name="predate" type="DATE" title="创建时间" />
+		<column id="60" name="modifydate" type="DATE" title="修改时间" />
 	</table>
 
 	<table id="30001" name="inv_record" title="投资记录" datasrcid="FINWRITE" storegrp="FIN_TBS">
 		<column id="10" name="invicode" title="主键" type="VARCHAR(SZIBILL)" primkey="true" />
-		<column id="11" name="invcode" title="投资记录编码" type="VARCHAR(SZNBILL)" notnull="true" />
+		<column id="11" name="invcode" title="投资号" type="VARCHAR(SZNBILL)" notnull="true" />
 		<column id="12" name="usercode" title="投资用户" type="VARCHAR(SZUCODE)" />
 		<column id="20" name="invkind" title="渠道" type="VARCHAR(3)" />
 		<column id="30" name="invfcy" title="投资金额" type="NUMERIC(18.2)" />
@@ -23,8 +26,10 @@
 		<column id="50" name="bedate" title="起息日期" type="DATE" />
 		<column id="56" name="ledate" title="停息日期" type="DATE" />
 		<column id="60" name="accfcy" title="累计盈亏" type="NUMERIC(18.2)" />
+		
 		<column id="65" name="remark" title="备注" type="VARCHAR(512)" />
 		<column id="66" name="status" title="状态" type="CHAR(2)" />
+		
 		<column id="110" name="predate" type="DATE" title="创建时间" />
 		<column id="130" name="modifydate" type="DATE" title="修改时间" />
 		<index name="inv_record_invcode" fields="invcode" />
