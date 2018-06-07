@@ -13,5 +13,6 @@ snadk-ui/snadk-ui
 snadk-core/snadk-test
 
 #理财管理
+fin-bas/bas-ui
 fin-cc/cc-ui
 fin-inv/inv-ui

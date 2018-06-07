@@ -1,13 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<B title="投资管理" fullPage="true">
-	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid">
-	
+<B title="投资详情" fullPage="true">
+	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid" hidden="false">
+		<c name="invicode" sqltype="12" hidden="true" noblank="true" />
 	</m:DialogPane>
-	<m:GridTable title="投资管理" name="inv_record" sqlexpr="null" mainui="param" rdonly="true" noCollapseQPaneAfterRefresh="true" xprops.LoadDataService="SN-PLAT.FunctypeService">
-		<c name="functype" title="系统功能类型|编码" sqltype="12" width="150" asceOrd="true" />
-		<c name="name" title="系统功能类型|名称" sqltype="12" width="160" />
-		<c name="subtypes" title="实现类型" sqltype="12" width="120" mutiple="true" aidInputerBtn="true" tipIfOverflow="true" />
-		<c name="parsebean" title="解析Bean" sqltype="12" width="240" mutiple="true" aidInputerBtn="true" tipIfOverflow="true" />
-		<c name="remark" title="说明" sqltype="12" width="400" aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true" />
-	</m:GridTable>
+	<m:V uiprops.leftSize="200">
+		<m:RecordTable title="投资管理" name="record" sqlexpr="inv_record" mainui="param" xprops.LoadDataService="INF-INV.InvestService#queryInvRecordDetail" xprops.SaveDataService="INF-INV.InvestService#saveInvRecord"
+			layoutm="grid" cellcols="4" align="left" showToolbar="true">
+			<uilisteners>
+			snsoft.bas.sheet.VOListener.new
+			</uilisteners>
+			
+			<jslistener>
+			<![CDATA[
+			oncmd_start:function(table)
+			{
+				table.dataSet.setValue("status","70");
+				table.saveChanges();
+			}
+			,oncmd_stop:function(table)
+			{
+				table.dataSet.setValue("status","80");
+				table.saveChanges();
+			}
+			]]>
+			</jslistener>
+			
+			<attrs>
+				<attr type="203" name="start" title="启用"/>
+				<attr type="203" name="stop" title="停用"/>
+			</attrs>
+			
+			<ctrlcol idx="1" name="status" sqltype="12" />
+		
+			<ctrlval idx="1" val.status="70" ctrlFor="btn:start" disabled="true" />
+			<ctrlval idx="1" val.status="80" ctrlFor="btn:stop" disabled="true" />
+			
+			<c name="invicode" title="主键" sqltype="12" hidden="true" />
+			<c name="usercode" title="投资用户" sqltype="12" hidden="true" />
+			
+			<GroupPane border="true" layoutm="grid" name="baseinfo" title="投资信息">
+				<c name="invcode" title="投资号" sqltype="12" width="140" rdonly="true" noblankOnSubmit="true"/>
+				<c name="invkind" title="渠道" sqltype="12" width="140" noblankOnSubmit="true" codedata="#FIN-INV.invkind" showname="true" disableed="true" droplist="true" droplistWithSearchPane="true" codeNameMatch="true" listSBoxOnTop="true"
+					aiprops="promptInfo:'',cellTextFmt:['${invkind}-${invname}']" />
+				<c name="invfcy" title="投资金额" sqltype="2" width="140" noblankOnSubmit="true" />
+				<c name="ratio" title="收益率" sqltype="2" width="140"/>
+	
+				<c name="bedate" title="起息日期" sqltype="91" width="140" noblankOnSubmit="true" disableed="true" aidInputerBtn="true"/>
+				<c name="ledate" title="停息日期" sqltype="91" width="140" disableed="true" aidInputerBtn="true"/>
+				<c name="accfcy" title="累计盈亏" sqltype="2" width="140"/>
+				<c name="status" title="状态" sqltype="12" width="140" codedata="#02.status" cmparams="sheetcode:'FIN-INV.Invest'" showname="true" rdonly="true"/>
+	
+				<c name="remark" title="备注" sqltype="12" width="580" height="60" 
+					layoutwidth="3" layoutheight="2"
+					aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true"
+					textwrap="true" mlineView="true"
+				/>
+	
+				<c name="predate" title="创建时间" sqltype="91" width="140" rdonly="true"/>
+				<c name="modifydate" title="修改时间" sqltype="91" width="140" rdonly="true" modifydateColumn="true"/>
+			</GroupPane>
+		</m:RecordTable>
+		<m:GridTable title="盈亏明细" name="profit" sqlexpr="inv_ym" mainui="record" xprops.LoadDataService="INF-INV.InvestService#queryInvProfitDetail" 
+			showToolbar="true">
+			<jslistener>
+			#new snsoft.fin.inv.ProfitListener()
+			</jslistener>
+			 <c name="invgicode" title="主键" sqltype="12" hidden="true"/>
+			 <c name="invicode" title="外键" sqltype="12" xprops.cpmastercol=":invicode" hidden="true"/>
+			 <c name="ym" title="年月" sqltype="12" width="80" descOrd="true" 
+			 	aidInputerBtn="true" disableed="true" aidinputer="Xjs.ui.DateAidInputer.new" 
+			 	uiprops.valueAccess="new snsoft.fin.inv.YMAccess()"/>
+			 <c name="accfcy" title="累计盈亏" sqltype="2" width="120"/>
+			 <c name="curfcy" title="当期盈亏" sqltype="2" width="120"/>
+			 <c name="remark" title="备注" sqltype="12" width="430" height="60" 
+					layoutwidth="3" layoutheight="2"
+					aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true"
+					textwrap="true" mlineView="true"/>
+			 <c name="predate" title="创建时间" sqltype="91" width="135" rdonly="true"/>
+		</m:GridTable>
+	</m:V>
 </B>

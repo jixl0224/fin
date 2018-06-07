@@ -1,0 +1,3 @@
+classes:
+ snsoft.fin.inv.ProfitListener:Xjs.table.DefaultListener
+ snsoft.fin.inv.YMAccess:Xjs.table.ColumnValueAccess

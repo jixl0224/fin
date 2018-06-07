@@ -1,0 +1,7 @@
+-path  ${BASEDIR}/../src/main/java=>${BASEDIR}/../../inv-ui/web/xjslib
+
+-classpath ${BASEDIR}/../target/classes
+
+-langs=
+-buildfiles js+java+css
+-copyfiles html+gif+png+jpg

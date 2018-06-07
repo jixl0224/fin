@@ -60,6 +60,7 @@ public class InvProfit extends VO
 
 	/**创建时间*/
 	@Column
+	@DefaultValue(value = "CURTIME", uivalue = "new Xjs.dx.util.CurrentDateDefaultValue({serverTime:true})")
 	private Date				predate;
 
 	public String getInvgicode()

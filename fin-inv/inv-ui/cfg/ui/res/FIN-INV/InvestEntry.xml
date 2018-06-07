@@ -10,7 +10,7 @@
 			<attr type="203" name="openUI" title="打开" />
 		</attrs>
 		<jslistener>
-		#new snsoft.fin.bas.comm.FinOpenMuiListener({info:{muiid:'FIN-INV.InvestDetail',pm:{AuthRefresh:1},initMapper:{'invicode':'invicode'}}})
+		#new snsoft.fin.bas.comm.FinOpenMuiListener({info:{title:'投资详情',muiid:'FIN-INV.InvestDetail',pm:{AutoRefresh:1},initMapper:{'invicode':'invicode'}}})
 		</jslistener>
 		
 		
@@ -23,7 +23,7 @@
 		<c name="ledate" title="停息日期" sqltype="91" width="90" />
 		<c name="accfcy" title="累计盈亏" sqltype="2" width="80" />
 		<c name="remark" title="备注" sqltype="12" width="200" aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true" />
-		<c name="status" title="状态" sqltype="12" width="60" codedata="#02.status" cmparams="sheetcode:'FIN-INV.InvKind'" showname="true" />
+		<c name="status" title="状态" sqltype="12" width="60" codedata="#02.status" cmparams="sheetcode:'FIN-INV.Invest'" showname="true" />
 
 		<c name="predate" title="创建时间" sqltype="91" width="135" rdonly="true" descOrd="true" />
 		<c name="modifydate" title="修改时间" sqltype="91" width="135" modifydateColumn="true" rdonly="true" />
