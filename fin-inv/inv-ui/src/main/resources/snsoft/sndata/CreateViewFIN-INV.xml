@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<db id="FIN-INV" title="投资管理"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://snsoft.cn/schema/db"
+    xsi:schemaLocation="http://snsoft.cn/schema/db
+		https://adk-svn.sino-clink.com.cn/svn/adkdoc/configs/schema/CreateView.xsd">
+
+    <view name="inv_profit" title="盈亏查询" datasrcid="FINWRITE" viewexpr="盈亏查询">
+        <![CDATA[        
+            select 
+            	m.invicode,invcode,usercode,invkind,invfcy,ratio,bedate,ledate,status
+				,ym,g.accfcy,curfcy 
+			from inv_record m,inv_ym g
+			where m.invicode=g.invicode
+			and m.status in('70','80')
+        ]]>
+    </view>
+    
+</db>

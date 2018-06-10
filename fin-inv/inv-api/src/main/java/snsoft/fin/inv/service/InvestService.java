@@ -1,5 +1,6 @@
 package snsoft.fin.inv.service;
 
+import java.util.Date;
 import java.util.List;
 import snsoft.bas.service.QueryParams;
 import snsoft.bas.service.QueryResults;
@@ -9,6 +10,8 @@ import snsoft.commons.annotation.AuthParam;
 import snsoft.commons.spring.SpringBean;
 import snsoft.fin.inv.vo.InvProfit;
 import snsoft.fin.inv.vo.InvRecord;
+import snsoft.fin.inv.vo.InvYm;
+import snsoft.sql.SqlExpr;
 import snsoft.sql.annotation.SqlColumn;
 
 /**
@@ -34,21 +37,142 @@ public interface InvestService
 
 	QueryResults<InvRecord> queryInvRecordDetail(QueryInvRecordDetailParams params);
 
-	QueryResults<InvProfit> queryInvProfitDetail(QueryInvRecordDetailParams params);
+	QueryResults<InvYm> queryInvProfitDetail(QueryInvRecordDetailParams params);
+
+	@AuthParam(sheetCode = "FIN-INV.Invest", opids = { "R", "C" })
+	List<InvProfit> queryInvProfit(QueryInvProfitParams params);
+
+	public static class QueryInvProfitParams extends QueryParams
+	{
+		private static final long	serialVersionUID	= 5709928549516679913L;
+
+		@SqlColumn
+		String[]					invkind;
+
+		private Date				ym;
+
+		private Date				ymfm;
+
+		private Date				ymto;
+
+		public String[] getInvkind()
+		{
+			return invkind;
+		}
+
+		public void setInvkind(String[] invkind)
+		{
+			this.invkind = invkind;
+		}
+
+		public Date getYm()
+		{
+			return ym;
+		}
+
+		public void setYm(Date ym)
+		{
+			this.ym = ym;
+		}
+
+		public Date getYmfm()
+		{
+			return ymfm;
+		}
+
+		public void setYmfm(Date ymfm)
+		{
+			this.ymfm = ymfm;
+		}
+
+		public Date getYmto()
+		{
+			return ymto;
+		}
+
+		public void setYmto(Date ymto)
+		{
+			this.ymto = ymto;
+		}
+	}
 
 	public static class QueryInvRecordParams extends QueryParams
 	{
 		private static final long	serialVersionUID	= 4670937677229955230L;
 
-		@SqlColumn
-		private String				status;
+		@SqlColumn(column = "bedate", sqlop = SqlExpr.GE)
+		private Date				bedatefm;
 
-		public String getStatus()
+		@SqlColumn(column = "bedate", sqlop = SqlExpr.LT)
+		private Date				bedateto;
+
+		@SqlColumn(column = "predate", sqlop = SqlExpr.GE)
+		private Date				predatefm;
+
+		private Date				uncalcdate;
+
+		@SqlColumn(column = "predate", sqlop = SqlExpr.LT)
+		private Date				predateto;
+
+		@SqlColumn
+		private String[]			status;
+
+		public Date getBedatefm()
+		{
+			return bedatefm;
+		}
+
+		public void setBedatefm(Date bedatefm)
+		{
+			this.bedatefm = bedatefm;
+		}
+
+		public Date getBedateto()
+		{
+			return bedateto;
+		}
+
+		public void setBedateto(Date bedateto)
+		{
+			this.bedateto = bedateto;
+		}
+
+		public Date getPredatefm()
+		{
+			return predatefm;
+		}
+
+		public void setPredatefm(Date predatefm)
+		{
+			this.predatefm = predatefm;
+		}
+
+		public Date getPredateto()
+		{
+			return predateto;
+		}
+
+		public void setPredateto(Date predateto)
+		{
+			this.predateto = predateto;
+		}
+
+		public Date getUncalcdate()
+		{
+			return uncalcdate;
+		}
+
+		public void setUncalcdate(Date uncalcdate)
+		{
+			this.uncalcdate = uncalcdate;
+		}
+
+		public String[] getStatus()
 		{
 			return status;
 		}
 
-		public void setStatus(String status)
+		public void setStatus(String[] status)
 		{
 			this.status = status;
 		}

@@ -33,7 +33,7 @@
 		<column id="110" name="predate" type="DATE" title="创建时间" />
 		<column id="130" name="modifydate" type="DATE" title="修改时间" />
 		<index name="inv_record_invcode" fields="invcode" />
-		<index name="inv_record_edate" fields="bedate,ledate" />
+		<index name="inv_record_edate" fields="bedate" />
 	</table>
 
 	<table id="30002" name="inv_ym" title="投资盈亏表" datasrcid="FINWRITE" storegrp="FIN_TBS">

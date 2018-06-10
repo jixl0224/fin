@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <B title="投资管理" fullPage="true">
-	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid">
-
+	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid" autoSaveParam="true" >
+		<c name="bedatefm" title="起息日期从" sqltype="91" width="110" diableed="true" aidInputerBtn="true"  initval="%PREVDATEYEAR-%CURDATEMONTH-1" />
+		<c name="bedateto" title="到" sqltype="91" width="110" diableed="true" aidInputerBtn="true"   />
+		<c name="invkind" title="渠道" sqltype="12" width="110" codedata="#FIN-INV.invkind" showname="true" disableed="true" droplist="true" droplistWithSearchPane="true" codeNameMatch="true" listSBoxOnTop="true"
+					aiprops="promptInfo:'',cellTextFmt:['${invkind}-${invname}']" mutiple="true"/>
+		<c name="status" title="状态" sqltype="12" width="160" initval="10,70" codedata="#02.status" cmparams="sheetcode:'FIN-INV.Invest'" button="true" mutiple="true" cellcols="3"/>
+		<c name="predatefm" title="创建时间从" sqltype="91" width="110" diableed="true" aidInputerBtn="true" />
+		<c name="predateto" title="到" sqltype="91" width="110" diableed="true" aidInputerBtn="true"   />
+		<c name="uncalcdate" title="本期未结转" sqltype="91" width="110" diableed="true" aidInputerBtn="true"  layoutwidth="2" />
 	</m:DialogPane>
 	<m:GridTable title="投资管理" name="record" sqlexpr="inv_record" mainui="param" rdonly="true" noCollapseQPaneAfterRefresh="true" xprops.LoadDataService="INF-INV.InvestService#queryInvRecord"
 		showToolbar="true">

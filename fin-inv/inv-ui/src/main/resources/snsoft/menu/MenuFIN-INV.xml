@@ -9,7 +9,7 @@
 			</menu>
 			<menu title="业务操作">
 				<menu title="投资记录" cmd="ui:FIN-INV.InvestEntry"></menu>
-				<menu title="盈亏-年月"></menu>
+				<menu title="盈亏-年月" cmd="ui:FIN-INV.ProfitYM"></menu>
 				<menu title="盈亏-渠道"></menu>
 			</menu>
 		</menu>

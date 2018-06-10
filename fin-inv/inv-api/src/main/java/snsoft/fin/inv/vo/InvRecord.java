@@ -89,7 +89,7 @@ public class InvRecord extends VO
 
 	@OneToMany
 	@JoinColumn(name = "invicode")
-	private List<InvProfit>		details;
+	private List<InvYm>		details;
 
 	public String getInvicode()
 	{
@@ -221,7 +221,7 @@ public class InvRecord extends VO
 		this.modifydate = modifydate;
 	}
 
-	public List<InvProfit> getDetails()
+	public List<InvYm> getDetails()
 	{
 		if (details == null)
 		{
@@ -230,7 +230,7 @@ public class InvRecord extends VO
 		return details;
 	}
 
-	public void setDetails(List<InvProfit> details)
+	public void setDetails(List<InvYm> details)
 	{
 		this.details = details;
 	}

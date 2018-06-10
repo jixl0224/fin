@@ -1,18 +1,12 @@
 package snsoft.fin.inv.vo;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import javax.persistence.Column;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import snsoft.bas.sheet.dft.annotation.DefaultValue;
-import snsoft.commons.annotation.VOField;
 import snsoft.dx.VO;
 
 /**
- * <p>标题：投资盈亏表</p>
+ * <p>标题：</p>
  * <p>功能：</p>
  * <p>
  * 其他说明：
@@ -20,58 +14,43 @@ import snsoft.dx.VO;
  * <p>作者：冀小雷</p>
  * <p>审核：</p>
  * <p>重构：</p>
- * <p>创建日期：2018年5月19日下午5:31:51</p>
+ * <p>创建日期：2018年6月11日上午6:01:26</p>
  * 查看帮助：<a href="" target="_blank"></a>
  */
-@Table(name="inv_ym")
+@Table(name = "inv_profit")
 public class InvProfit extends VO
 {
-	private static final long	serialVersionUID	= 3844129865907496507L;
-
+	private static final long	serialVersionUID	= -4605207459553471358L;
 	/**主键*/
-	@Id
 	@Column
-	@DefaultValue("Accode:FIN-BAS.InnerCode")
-	private String				invgicode;
-
-	/**外键*/
-	@Column
-	@NotNull(message = "投资盈亏外键不可为空")
 	private String				invicode;
-
+	/**投资号*/
+	@Column
+	private String				invcode;
+	/**投资用户*/
+	@Column
+	private String				usercode;
+	/**渠道*/
+	@Column
+	private String				invkind;
+	/**状态*/
+	@Column
+	private String				status;
+	/**投资金额*/
+	@Column
+	private BigDecimal			invfcy;
+	/**收益率*/
+	@Column
+	private BigDecimal			ratio;
 	/**年月*/
 	@Column
-	@Pattern(regexp = "\\d{4}\\-\\d{2}", message = "年月格式不正确")
 	private String				ym;
-
 	/**累计盈亏*/
 	@Column
-	@VOField(maxdeci = "2")
 	private BigDecimal			accfcy;
-
 	/**当期盈亏*/
 	@Column
-	@VOField(maxdeci = "2")
 	private BigDecimal			curfcy;
-
-	/**备注*/
-	@Column
-	private String				remark;
-
-	/**创建时间*/
-	@Column
-	@DefaultValue(value = "CURTIME", uivalue = "new Xjs.dx.util.CurrentDateDefaultValue({serverTime:true})")
-	private Date				predate;
-
-	public String getInvgicode()
-	{
-		return invgicode;
-	}
-
-	public void setInvgicode(String invgicode)
-	{
-		this.invgicode = invgicode;
-	}
 
 	public String getInvicode()
 	{
@@ -81,6 +60,66 @@ public class InvProfit extends VO
 	public void setInvicode(String invicode)
 	{
 		this.invicode = invicode;
+	}
+
+	public String getInvcode()
+	{
+		return invcode;
+	}
+
+	public void setInvcode(String invcode)
+	{
+		this.invcode = invcode;
+	}
+
+	public String getUsercode()
+	{
+		return usercode;
+	}
+
+	public void setUsercode(String usercode)
+	{
+		this.usercode = usercode;
+	}
+
+	public String getInvkind()
+	{
+		return invkind;
+	}
+
+	public void setInvkind(String invkind)
+	{
+		this.invkind = invkind;
+	}
+
+	public String getStatus()
+	{
+		return status;
+	}
+
+	public void setStatus(String status)
+	{
+		this.status = status;
+	}
+
+	public BigDecimal getInvfcy()
+	{
+		return invfcy;
+	}
+
+	public void setInvfcy(BigDecimal invfcy)
+	{
+		this.invfcy = invfcy;
+	}
+
+	public BigDecimal getRatio()
+	{
+		return ratio;
+	}
+
+	public void setRatio(BigDecimal ratio)
+	{
+		this.ratio = ratio;
 	}
 
 	public String getYm()
@@ -111,25 +150,5 @@ public class InvProfit extends VO
 	public void setCurfcy(BigDecimal curfcy)
 	{
 		this.curfcy = curfcy;
-	}
-
-	public String getRemark()
-	{
-		return remark;
-	}
-
-	public void setRemark(String remark)
-	{
-		this.remark = remark;
-	}
-
-	public Date getPredate()
-	{
-		return predate;
-	}
-
-	public void setPredate(Date predate)
-	{
-		this.predate = predate;
 	}
 }

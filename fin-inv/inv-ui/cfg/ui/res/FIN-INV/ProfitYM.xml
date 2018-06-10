@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<B title="盈亏-年月" fullPage="true">
+	<m:DialogPane name="param" region="north" showToolbar="true" layoutm="grid">
+		<c name="ym" title="计算期" sqltype="91" disabeed="true" noblank="true" aidInputerBtn="true" initval="%CURDATE"/>
+	</m:DialogPane>
+	<m:GridTable title="盈亏-年月" name="profit" sqlexpr="inv_profit" mainui="param" noCollapseQPaneAfterRefresh="true" xprops.LoadDataService="INF-INV.InvestService#queryInvProfit" 
+		showToolbar="true">
+		<jslistener>
+		<![CDATA[
+		]]>
+		</jslistener>
+		<attrs>
+			<attr type="203" name="createMonthReport" title="生成月报" />
+		</attrs>
+
+		<c name="invicode" title="主键" sqltype="12" hidden="true" />
+		<c name="invcode" title="投资号" sqltype="12" width="100" />
+		<c name="invkind" title="渠道" sqltype="12" width="120" codedata="#FIN-INV.invkind" showname="true" />
+		<c name="invfcy" title="投资金额" sqltype="2" width="80" />
+		<c name="ratio" title="收益率" sqltype="2" width="80" />
+<!-- 		<c name="remark" title="备注" sqltype="12" width="200" aidInputerBtn="true" aidInputableIfRdonly="true" mutipleLine="true" tipIfOverflow="true" /> -->
+		<c name="status" title="状态" sqltype="12" width="60" codedata="#02.status" cmparams="sheetcode:'FIN-INV.Invest'" showname="true" />
+		<c name="accfcy" title="累计盈亏" sqltype="2" width="120"/>
+		<c name="curfcy" title="当期盈亏" sqltype="2" width="120"/>
+	</m:GridTable>
+</B>
