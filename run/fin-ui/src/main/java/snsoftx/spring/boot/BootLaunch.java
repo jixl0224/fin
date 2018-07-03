@@ -1,6 +1,8 @@
-package snsoftboot;
+package snsoftx.spring.boot;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import snsoft.commons.util.BasConfig;
 
 /**
  * <p>标题：</p>
@@ -14,11 +16,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * <p>创建日期：2017年8月10日下午1:32:40</p>
  * 查看帮助：<a href="" target="_blank"></a>
  */
-@SpringBootApplication(scanBasePackages = { "snsoft.**.controller", "snsoftboot" })
+@SpringBootApplication(scanBasePackages = {"snsoft.spring.boot", "snsoftx.spring.boot"})
 public class BootLaunch
 {
+	static
+	{
+		BasConfig.getBasOptions().startInit();
+	}
+
 	public static void main(String[] args)
 	{
-		new BootSpringApplication(BootLaunch.class).run(args);
+		new SpringApplication(BootLaunch.class).run(args);
 	}
 }
