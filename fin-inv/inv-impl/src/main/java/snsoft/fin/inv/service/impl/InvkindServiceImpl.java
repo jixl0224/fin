@@ -23,12 +23,12 @@ public class InvkindServiceImpl implements InvkindService
 	@Override
 	public List<InvKind> query(NullQueryParams params)
 	{
-		return new DefaultDAO<InvKind>().queryList(InvKind.class, params.buildDBQueryParams());
+		return new DefaultDAO<InvKind>(InvKind.class).queryList(params.buildDBQueryParams());
 	}
 
 	@Override
 	public void save(List<InvKind> records)
 	{
-		new DefaultDAO<InvKind>().save(records);
+		new DefaultDAO<InvKind>(InvKind.class).save(records);
 	}
 }
