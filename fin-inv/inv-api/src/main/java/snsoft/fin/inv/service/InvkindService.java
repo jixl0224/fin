@@ -1,9 +1,9 @@
 package snsoft.fin.inv.service;
 
 import java.util.List;
+import snsoft.api.service.AuthParam;
+import snsoft.api.service.SpringBean;
 import snsoft.bas.service.util.NullQueryParams;
-import snsoft.commons.annotation.AuthParam;
-import snsoft.commons.spring.SpringBean;
 import snsoft.fin.inv.vo.InvKind;
 
 /**

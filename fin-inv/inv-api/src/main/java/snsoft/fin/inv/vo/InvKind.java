@@ -5,8 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
-import snsoft.bas.sheet.dft.annotation.DefaultValue;
-import snsoft.dx.VO;
+import snsoft.api.dft.DefaultValue;
+import snsoft.api.dx.VO;
 
 /**
  * <p>标题：投资渠道</p>

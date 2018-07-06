@@ -7,9 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import snsoft.bas.sheet.dft.annotation.DefaultValue;
-import snsoft.commons.annotation.VOField;
-import snsoft.dx.VO;
+import snsoft.api.dft.DefaultValue;
+import snsoft.api.dx.VO;
+import snsoft.api.dx.VOField;
 
 /**
  * <p>标题：投资盈亏表</p>

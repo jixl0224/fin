@@ -3,7 +3,7 @@ package snsoft.fin.inv.vo;
 import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Table;
-import snsoft.dx.VO;
+import snsoft.api.dx.VO;
 
 /**
  * <p>标题：</p>

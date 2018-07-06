@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import snsoft.bas.sheet.dft.annotation.DefaultValue;
-import snsoft.dx.VO;
+import snsoft.api.dft.DefaultValue;
+import snsoft.api.dx.VO;
 
 /**
  * <p>标题：投资记录</p>
