@@ -2,6 +2,7 @@ package snsoft.fin.inv.service.impl;
 
 import java.util.List;
 import snsoft.bas.service.util.NullQueryParams;
+import snsoft.bas.service.util.ParamUtils;
 import snsoft.dx.DefaultDAO;
 import snsoft.fin.inv.service.InvkindService;
 import snsoft.fin.inv.vo.InvKind;
@@ -23,7 +24,7 @@ public class InvkindServiceImpl implements InvkindService
 	@Override
 	public List<InvKind> query(NullQueryParams params)
 	{
-		return new DefaultDAO<InvKind>(InvKind.class).queryList(params.buildDBQueryParams());
+		return new DefaultDAO<InvKind>(InvKind.class).queryList(ParamUtils.buildDBQueryParams(params));
 	}
 
 	@Override

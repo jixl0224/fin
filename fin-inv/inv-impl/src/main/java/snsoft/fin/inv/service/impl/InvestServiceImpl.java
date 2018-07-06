@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import snsoft.bas.service.QueryResults;
+import snsoft.bas.service.util.ParamUtils;
 import snsoft.commons.util.ArrayUtils;
 import snsoft.commons.util.DateUtils;
 import snsoft.dx.DBUtils;
@@ -53,7 +54,7 @@ public class InvestServiceImpl implements InvestService
 			});
 			params.addExtQueryParams(new QueryColumn("invicode", SqlExpr.IN, invicodes));
 		});
-		Database.QueryParams p = params.buildDBQueryParams();
+		Database.QueryParams p = ParamUtils.buildDBQueryParams(params);
 		List<InvRecord> list = new DefaultDAO<InvRecord>(InvRecord.class).queryList(p);
 		QueryResults<InvRecord> results = new QueryResults<>(list);
 		results.setPageTotalRows(p.totalRows);
@@ -69,7 +70,7 @@ public class InvestServiceImpl implements InvestService
 	@Override
 	public QueryResults<InvRecord> queryInvRecordDetail(QueryInvRecordDetailParams params)
 	{
-		Database.QueryParams p = params.buildDBQueryParams();
+		Database.QueryParams p = ParamUtils.buildDBQueryParams(params);
 		List<InvRecord> list = new DefaultDAO<InvRecord>(InvRecord.class).queryList(p);
 		QueryResults<InvRecord> results = new QueryResults<>(list);
 		results.setPageTotalRows(p.totalRows);
@@ -79,7 +80,7 @@ public class InvestServiceImpl implements InvestService
 	@Override
 	public QueryResults<InvYm> queryInvProfitDetail(QueryInvRecordDetailParams params)
 	{
-		Database.QueryParams p = params.buildDBQueryParams();
+		Database.QueryParams p = ParamUtils.buildDBQueryParams(params);
 		List<InvYm> list = new DefaultDAO<InvYm>(InvYm.class).queryList(p);
 		QueryResults<InvYm> results = new QueryResults<>(list);
 		results.setPageTotalRows(p.totalRows);
@@ -100,6 +101,6 @@ public class InvestServiceImpl implements InvestService
 		Optional.<Date> ofNullable(params.getYmto()).ifPresent(ymto -> {
 			params.addExtQueryParams(new QueryColumn("ym", SqlExpr.LE, format.format(ymto)));
 		});
-		return new DefaultDAO<InvProfit>(InvProfit.class).queryList(params.buildDBQueryParams());
+		return new DefaultDAO<InvProfit>(InvProfit.class).queryList(ParamUtils.buildDBQueryParams(params));
 	}
 }
