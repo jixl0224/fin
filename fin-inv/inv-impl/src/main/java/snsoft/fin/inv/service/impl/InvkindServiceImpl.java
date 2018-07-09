@@ -1,9 +1,9 @@
 package snsoft.fin.inv.service.impl;
 
 import java.util.List;
-import snsoft.bas.service.util.NullQueryParams;
-import snsoft.bas.service.util.ParamUtils;
+import snsoft.api.bas.NullQueryParams;
 import snsoft.dx.DefaultDAO;
+import snsoft.dx.util.ParamUtils;
 import snsoft.fin.inv.service.InvkindService;
 import snsoft.fin.inv.vo.InvKind;
 
