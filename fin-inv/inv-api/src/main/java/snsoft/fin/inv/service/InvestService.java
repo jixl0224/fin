@@ -4,11 +4,9 @@ import java.util.Date;
 import java.util.List;
 import snsoft.api.bas.QueryParams;
 import snsoft.api.bas.QueryResults;
-import snsoft.api.dx.SheetInfo;
 import snsoft.api.service.AuthParam;
 import snsoft.api.service.SpringBean;
 import snsoft.api.sql.SqlColumn;
-import snsoft.bas.sheet.service.BusiService.MainInnerGetter;
 import snsoft.fin.inv.vo.InvProfit;
 import snsoft.fin.inv.vo.InvRecord;
 import snsoft.fin.inv.vo.InvYm;
@@ -35,8 +33,10 @@ public interface InvestService
 	@AuthParam(sheetCode = "FIN-INV.Invest", opids = { "C" })
 	void saveInvRecord(List<InvRecord> records);
 
+	@AuthParam(sheetCode = "FIN-INV.Invest", opids = { "C" ,"R"})
 	QueryResults<InvRecord> queryInvRecordDetail(QueryInvRecordDetailParams params);
 
+	@AuthParam(sheetCode = "FIN-INV.Invest", opids = { "C" ,"R"},joinColumn="invicode")
 	QueryResults<InvYm> queryInvProfitDetail(QueryInvRecordDetailParams params);
 
 	@AuthParam(sheetCode = "FIN-INV.Invest", opids = { "R", "C" })
@@ -178,7 +178,6 @@ public interface InvestService
 		}
 	}
 
-	@SheetInfo("INF-INV.Invest")
 	public static class QueryInvRecordDetailParams extends QueryParams
 	{
 		private static final long	serialVersionUID	= 4069686930870597214L;
@@ -186,7 +185,6 @@ public interface InvestService
 		@SqlColumn(flags = 8)
 		private String				invicode;
 
-		@MainInnerGetter
 		public String getInvicode()
 		{
 			return invicode;
