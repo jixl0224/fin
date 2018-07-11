@@ -57,7 +57,7 @@ public class InvestServiceImpl implements InvestService
 		Database.QueryParams p = ParamUtils.buildDBQueryParams(params);
 		List<InvRecord> list = new DefaultDAO<InvRecord>(InvRecord.class).queryList(p);
 		QueryResults<InvRecord> results = new QueryResults<>(list);
-		results.setPageTotalRows(p.totalRows);
+		results.setTotalRows(p.totalRows);
 		return results;
 	}
 
@@ -73,7 +73,7 @@ public class InvestServiceImpl implements InvestService
 		Database.QueryParams p = ParamUtils.buildDBQueryParams(params);
 		List<InvRecord> list = new DefaultDAO<InvRecord>(InvRecord.class).queryList(p);
 		QueryResults<InvRecord> results = new QueryResults<>(list);
-		results.setPageTotalRows(p.totalRows);
+		results.setTotalRows(p.totalRows);
 		return results;
 	}
 
@@ -83,7 +83,7 @@ public class InvestServiceImpl implements InvestService
 		Database.QueryParams p = ParamUtils.buildDBQueryParams(params);
 		List<InvYm> list = new DefaultDAO<InvYm>(InvYm.class).queryList(p);
 		QueryResults<InvYm> results = new QueryResults<>(list);
-		results.setPageTotalRows(p.totalRows);
+		results.setTotalRows(p.totalRows);
 		return results;
 	}
 
